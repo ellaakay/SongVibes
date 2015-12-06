@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
+ <title>iEat</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<body onload="getLocation();">
+ <h1> Welcome to iEat! </h1>
+  <h2> I came, I saw, I ate. </h2>
+  <hr>
+  <br>
+ <h3> Step 1: Choose the cuisines you like </h3>
+  <br>
+
+<form method="POST" action="/find">
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c3" value="Breakfast">
+    <label for="c3">Cereal Killer (Breakfast)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c2" value="Baegels">
+    <label for="c2">BAE goals (Baegels)</label>
+  </div>
+<div>
+    <input type="checkbox" name="cuisine[]" id="c4" value="Diners">
+    <label for="c4">Lord of the Fries (Diners)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c5" value="Mexican">
+    <label for="c5">Nacho Business (Mexican)</label>
+  </div>
+<div>
+    <input type="checkbox" name="cuisine[]" id="c6" value="Indian">
+    <label for="c6">Naan Stop (Indian)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c7" value="Greek">
+    <label for="c7">Pita Pan (Greek)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c8" value="Gyros">
+    <label for="c8">Just Fa Lafs (Gryos)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c9" value="Bars">
+    <label for="c3">Tequila Mockingbird (Bars)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c10" value="Thai">
+    <label for="c10">Thai Tanic (Thai)</label>
+  </div>
+<div>
+    <input type="checkbox" name="cuisine[]" id="c11" value="Cheese">
+    <label for="c11">The Gouda Life (Cheese)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c12" value="Tapas">
+    <label for="c12">On Tapa of the World (Tapas)</label>
+  </div>
+<div>
+    <input type="checkbox" name="cuisine[]" id="c13" value="Chinese">
+    <label for="c13">Stop, Wok, and Roll (Chinese)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c14" value="Japanese">
+    <label for="c14">Miso Hungry (Japanese)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c15" value="Sandwiches">
+    <label for="c15">Hop in my Hamborgini (Sandwiches)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c16" value="Milkshakes">
+    <label for="c16">Shake it off (Milkshakes)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c17" value="French">
+    <label for="c17">Baugette About it! (French)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c18" value="Salads">
+    <label for="c18">Lettuce Celebrate! (Salads)</label>
+  </div>
+<div>
+    <input type="checkbox" name="cuisine[]" id="c19" value="Italian">
+    <label for="c19">Penne for your thoughts? (Italian)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c20" value="Ice Cream">
+    <label for="c20">I scream, you scream! (Ice Cream)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c21" value="Crepes">
+    <label for="c21">Holy Crepe! (Crepes)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c22" value="Pizza">
+    <label for="c22">Life of Pie (Pizza)</label>
+  </div>
+<div>
+    <input type="checkbox" name="cuisine[]" id="c23" value="Tea">
+    <label for="c23">Fifty Shades of Earl Grey (Tea)</label>
+  </div>
+  <div>
+    <input type="checkbox" name="cuisine[]" id="c24" value="Coffee">
+    <label for="c24">I love you a latte. (Coffee)</label>
+  </div>
+  <br>
+  <div id="hide">
+   <input id="lat" name="lat" type='text' placeholder="lat"><br><br>
+   <input id="lon" name="lon" type='text' placeholder="lon"><br><br>
+  </div>
+   Sorry, we were having too much pun! ;)
+  <button class="submit">Submit</button>
+  </form>
+
+
+
+
+</body>
+</html>
+
+<script>
+var x = document.getElementById("lat");
+var y = document.getElementById("lon");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.value = "Geolocation is not supported by this browser.";
+         y.value = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.value = position.coords.latitude;
+    y.value =position.coords.longitude;
+}
+</script>
